@@ -1,0 +1,6 @@
+ # commands needed to install puppet module
+ # run on puppet master
+ # choosing the newer ngix instance
+ 
+ sudo puppet module install jfryman-nginx --modulepath /etc/puppet/modules
+ 

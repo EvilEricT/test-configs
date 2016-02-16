@@ -1,0 +1,13 @@
+#/etc/puppet/hiera/nodes/nginx.justevil.com.yaml
+
+#install and bootstrap GINX instance
+
+class { 'nginx': }
+
+# host is named nginx.justevil.com for the tiny bit of added security provided
+# There's a cname record in DNS that points to the host record for nginx.justevil.com
+ 
+  nginx::resource::vhost{'www.justevil.com':
+    listen_port  => 8888,
+	proxy => 'https://github.com/nwea-techops/tech_quiz' ,
+	  }
